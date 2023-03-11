@@ -13,6 +13,7 @@
         <module>request-reply-queue-integration-pattern</module>
         <module>point-to-point-queue-integration-pattern</module>
         <module>publish-subscribe-queue-integration-pattern</module>
+        <module>message-router-queue-integration-pattern</module>
     </modules>
 
     <properties>
