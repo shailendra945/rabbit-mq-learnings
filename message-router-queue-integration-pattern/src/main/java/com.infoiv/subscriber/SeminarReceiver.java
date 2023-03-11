@@ -5,8 +5,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.util.TimerTask;
 
-public class SeminarReceiver {
+public class SeminarReceiver extends TimerTask {
 
     private static final String SEMINAR_QUEUE = "seminar_queue";
 
@@ -60,5 +61,12 @@ public class SeminarReceiver {
                 LOGGER.warn(e.getMessage(), e);
             }
         }
+    }
+
+    @Override
+    public void run() {
+        initialize();
+        receive();
+        destroy();
     }
 }

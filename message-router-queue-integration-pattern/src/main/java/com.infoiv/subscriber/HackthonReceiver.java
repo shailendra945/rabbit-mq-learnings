@@ -5,8 +5,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.util.TimerTask;
 
-public class HackthonReceiver {
+public class HackthonReceiver extends TimerTask {
 
     private static final String HACKATON_QUEUE = "hackaton_queue";
     private final static Logger LOGGER = LoggerFactory.getLogger(HackthonReceiver.class);
@@ -59,5 +60,12 @@ public class HackthonReceiver {
                 LOGGER.warn(e.getMessage(), e);
             }
         }
+    }
+
+    @Override
+    public void run() {
+        initialize();
+        receive();
+        destroy();
     }
 }
